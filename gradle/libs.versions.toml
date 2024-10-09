@@ -1,0 +1,64 @@
+[versions]
+agp = "8.7.0"
+kotlin = "2.0.20"
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+composeBom = "2024.09.03"
+tvFoundation = "1.0.0-alpha11"
+tvMaterial = "1.0.0"
+lifecycleRuntimeKtx = "2.8.6"
+activityCompose = "1.9.2"
+ktor = "2.3.10"
+androidxHiltNavigationCompose = "1.2.0"
+hilt = "2.52"
+timber = "5.0.1"
+coil = "2.7.0"
+ksp = "2.0.20-1.0.24" # has to be the same as kotlin version
+datastore-preferences = "1.1.1"
+line_awesome = "1.0.0"
+androidx-constraint = "1.0.1"
+
+[libraries]
+# androidx
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-tv-foundation = { group = "androidx.tv", name = "tv-foundation", version.ref = "tvFoundation" }
+androidx-tv-material = { group = "androidx.tv", name = "tv-material", version.ref = "tvMaterial" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-constraint-layout = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "androidx-constraint" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore-preferences" }
+
+# ktor
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
+ktor-client-serializtion-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-content-negotation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+# dagger hilt
+dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+dagger-hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
+
+# 3rd party
+line-awesome-icons = { module = "br.com.devsrsouza.compose.icons.android:line-awesome", version.ref = "line_awesome" }
+coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+
+[bundles]
+ktor = ["ktor-client-android", "ktor-client-serialization", "ktor-client-serializtion-json", "ktor-client-logging", "ktor-client-content-negotation"]
+dagger-hilt = ["dagger-hilt-android", "dagger-hilt-navigation"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
